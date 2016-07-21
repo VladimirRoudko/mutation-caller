@@ -43,7 +43,8 @@ echo "identifing somatic mutations ... " 1>&2
 sh exit.code.sh $OUTPUT_FOLDER/${filenames[0]}. markadapt.piped.markdupl.indelrealign.recal.bam.pileup
 varscan somatic \
 $OUTPUT_FOLDER/${filenames[0]}.${filenames[1]}.markadapt.piped.markdupl.indelrealign.recal.bam.mpileup \
-$OUTPUT_FOLDER/${filenames[0]}.${filenames[1]}.varscan --mpileup 1 --min-coverage 10 --min-var-freq 0.08 --somatic-p-value 0.05 --output-vcf 1 & wait;
+$OUTPUT_FOLDER/${filenames[0]}.${filenames[1]}.varscan \
+--mpileup 1 --min-coverage 10 --min-var-freq 0.08 --somatic-p-value 0.05 --output-vcf 1 & wait;
 echo "identifing somatic mutations ... done" 1>&2
 
 echo "processing somatic mutation files ... " 1>&2
